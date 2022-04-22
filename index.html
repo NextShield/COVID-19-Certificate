@@ -56,7 +56,7 @@ function setCookie(value) {
 document.cookie = "cardnum="+value+"; expires=Thu, 18 Dec 2023 12:00:00 UTC";
 }
 var cardnum = getCookie("cardnum");
-If (cardnum != "") {
+if (cardnum != "") {
 	document.getElementById("cardnum").value = getCookie("cardnum");
 }
 //-->
