@@ -46,6 +46,8 @@ div {
 <script>
 <!--
 var now = new Date();
+var month= now.getMonth()+1;
+var day=now.getDate();
 var hour= now.getHours();
 var minute = now.getMinutes();
 var second = now.getSeconds();
@@ -54,10 +56,12 @@ if (hour> 11) { ap = "PM"; }
 //if (hour> 12) { hour = hour - 12;}
 if (hour== 0) { hour = 12; }
 if (hour< 10) { hour= "0" + hour;}
+if (month< 10) { month= "0" + month;}
+if (day< 10) { day= "0" + day;}
 if (minute < 10) { minute = "0" + minute; }
 if (second < 10) { second = "0" + second; }
 
-document.getElementById("coviddate").value = now.getFullYear()-1911 +'/'+ (now.getMonth()+1) +'/'+ now.getDate() +' '+ hour +':'+ minute;
+document.getElementById("coviddate").value = now.getFullYear()-1911 +'/'+ month +'/'+ day +' '+ hour +':'+ minute;
 
 function setCookie(value) {
 document.cookie = "cardnum="+value+"; expires=Thu, 18 Dec 2023 12:00:00 UTC";
