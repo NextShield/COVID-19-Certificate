@@ -55,6 +55,16 @@ document.getElementById("coviddate").value = now.getFullYear()-1911 +'/'+ now.ge
 function setCookie(value) {
 document.cookie = "cardnum="+value+"; expires=Thu, 18 Dec 2023 12:00:00 UTC";
 }
+function getCookie(user) {
+    var cookieArr = document.cookie.split(";");
+    for(var i = 0; i < cookieArr.length; i++) {
+        var cookiePair = cookieArr[i].split("=");
+        if(user == cookiePair[0].trim()) {
+            return decodeURIComponent(cookiePair[1]);
+        }
+    }
+    return null;
+}
 var cardnum = getCookie("cardnum");
 if (cardnum != "") {
 	document.getElementById("cardnum").value = getCookie("cardnum");
