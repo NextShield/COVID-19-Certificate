@@ -1,0 +1,57 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>健保快易通</title>
+<style>
+html,body {
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
+	backgound: #387382;
+}
+.fullwidth {
+	width: 100%;
+}
+input { 
+	border:0;
+	width: 100%;
+	color:#343434;
+	font-size:5vw;
+	font-family:"Times New Roman";
+	font-weight:Bold;
+}
+div {
+	position: absolute;
+}
+.idnum{
+	width: 29%;
+	left: 32%;
+	top: 58vw;
+}
+.datetime {
+	width: 50%;
+	left: 32%;
+	top: 69vw;
+}
+</style>
+</head>
+<body><img src="健保快易通.png" class="fullwidth"><div class="idnum"><input type="text" value="A12345****"></div><div class="datetime"><input type="text" value="" id="coviddate"></div>
+<script>
+<!--
+var now = new Date();
+var hour= now.getHours();
+var minute = now.getMinutes();
+var second = now.getSeconds();
+var ap = "AM";
+if (hour> 11) { ap = "PM"; }
+//if (hour> 12) { hour = hour - 12;}
+if (hour== 0) { hour = 12; }
+if (hour< 10) { hour= "0" + hour;}
+if (minute < 10) { minute = "0" + minute; }
+if (second < 10) { second = "0" + second; }
+
+document.getElementById("coviddate").value = now.getFullYear()-1911 +'/'+ now.getMonth() +'/'+ now.getDate() +' '+ hour +':'+ minute;
+//-->
+</script>
+</body>
+</html>
