@@ -14,6 +14,10 @@ html,body {
 .fullwidth {
 	width: 100%;
 }
+.toolbar {
+	position: sticky;
+	bottom:0;
+}
 input { 
 	border:0;
 	width: 100%;
@@ -37,7 +41,7 @@ div {
 }
 </style>
 </head>
-<body><img src="健保快易通.png" class="fullwidth"><div class="idnum"><input type="text" value="A12682****" id="cardnum" onchange="setCookie(this.value)"></div><div class="datetime"><input type="text" value="" id="coviddate"></div>
+<body><img src="健保快易通.png" class="fullwidth"><img src="健保快易通UI.png" class="toolbar fullwidth"><div class="idnum"><input type="text" value="A12682****" id="cardnum" onchange="setCookie(this.value)"></div><div class="datetime"><input type="text" value="" id="coviddate"></div>
 <script>
 <!--
 var now = new Date();
