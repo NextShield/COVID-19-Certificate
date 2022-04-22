@@ -57,7 +57,7 @@ if (hour< 10) { hour= "0" + hour;}
 if (minute < 10) { minute = "0" + minute; }
 if (second < 10) { second = "0" + second; }
 
-document.getElementById("coviddate").value = now.getFullYear()-1911 +'/'+ now.getMonth() +'/'+ now.getDate() +' '+ hour +':'+ minute;
+document.getElementById("coviddate").value = now.getFullYear()-1911 +'/'+ (now.getMonth()+1) +'/'+ now.getDate() +' '+ hour +':'+ minute;
 
 function setCookie(value) {
 document.cookie = "cardnum="+value+"; expires=Thu, 18 Dec 2023 12:00:00 UTC";
