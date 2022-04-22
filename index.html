@@ -35,7 +35,7 @@ div {
 }
 </style>
 </head>
-<body><img src="健保快易通.png" class="fullwidth"><div class="idnum"><input type="text" value="A12345****"></div><div class="datetime"><input type="text" value="" id="coviddate"></div>
+<body><img src="健保快易通.png" class="fullwidth"><div class="idnum"><input type="text" value="A12682****" id="cardnum" onchange="setCookie(this.value)"></div><div class="datetime"><input type="text" value="" id="coviddate"></div>
 <script>
 <!--
 var now = new Date();
@@ -51,6 +51,35 @@ if (minute < 10) { minute = "0" + minute; }
 if (second < 10) { second = "0" + second; }
 
 document.getElementById("coviddate").value = now.getFullYear()-1911 +'/'+ now.getMonth() +'/'+ now.getDate() +' '+ hour +':'+ minute;
+
+function setCookie(value) {
+document.cookie = "cardnum="+value+"; expires=Thu, 18 Dec 2023 12:00:00 UTC";
+}
+	
+function parseCookie() {
+    var cookieObj = {};
+    var cookieAry = document.cookie.split(';');
+    var cookie;
+    
+    for (var i=0, l=cookieAry.length; i<l; ++i) {
+        cookie = jQuery.trim(cookieAry[i]);
+        cookie = cookie.split('=');
+        cookieObj[cookie[0]] = cookie[1];
+    }
+    
+    return cookieObj;
+}
+function getCookieByName(name) {
+    var value = parseCookie()[name];
+    if (value) {
+        value = decodeURIComponent(value);
+    }
+
+    return value;
+}
+If (getCookieByName(cardnum)!="") {
+	document.getElementById("cardnum").value = getCookieByName(cardnum);
+}
 //-->
 </script>
 </body>
