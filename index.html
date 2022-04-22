@@ -67,7 +67,7 @@ function getCookie(user) {
     return null;
 }
 var cardnum = getCookie("cardnum");
-if (cardnum != "") {
+if (cardnum != null) {
 	document.getElementById("cardnum").value = cardnum;
 }
 //-->
